@@ -3,10 +3,13 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import AlertState from './context/alerts/AlertState';
 
 ReactDOM.render(
   <React.StrictMode>
+    <AlertState>
     <App />
+    </AlertState>
   </React.StrictMode>,
   document.getElementById('root')
 );
