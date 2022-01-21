@@ -1,23 +1,21 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect } from 'react';
 
-export default function Modal(props) {
-
-    const ref = useRef(null);
-
-    const handleModal = ()=>{
-        console.log("In useEffect");
-        if(props.flag)
-            ref.current.click();
-    }
+const Profile = (props) => {
 
     useEffect(() => {
-        handleModal();
+      console.log(props.profile);
     }, []);
     
-    
-
+    // const ref = useRef(null);
+    // useEffect(() => {
+    //     setTimeout(() => {
+    //         ref.current.click();
+    //     }, 1000); //miliseconds
+    // }, []);
     return <div>
-        <button type="button" ref={ref} className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        {console.log(props.profile)}
+        <h1>This is Profile Page</h1>
+        <button type="button" autoFocus className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
             Launch demo modal
         </button>
 
@@ -39,4 +37,6 @@ export default function Modal(props) {
             </div>
         </div>
     </div>;
-}
+};
+
+export default Profile;

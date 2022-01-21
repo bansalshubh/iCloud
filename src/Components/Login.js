@@ -21,7 +21,6 @@ export default function Login() {
     let history = useNavigate();
     const onSubmit = async (e) => {
         e.preventDefault();
-        // console.log("In on Submit");
         const response = await fetch(`${APIURL}/api/auth/loginuser`, {
             method: "POST",
             headers: {
@@ -41,7 +40,8 @@ export default function Login() {
             showAlert("danger",json.message);
     }
 
-    return <div>
+    return <div className='container'>
+        <h1 className='text-center'>Login to continue to iCloud </h1>
         <form onSubmit={onSubmit}>
             <div className="mb-3">
                 <label htmlFor="exampleInputEmail1" className="form-label">Email address</label>
@@ -51,7 +51,7 @@ export default function Login() {
                 <label htmlFor="exampleInputPassword1" className="form-label">Password</label>
                 <input type="password" className="form-control" id="password" onChange={onChange} value={auth.password} name="password" autoComplete="on" />
             </div>
-            <button type="submit" className="btn btn-primary">Submit</button>
+            <button type="submit" className="btn btn-primary">Login</button>
         </form>
     </div>
 }

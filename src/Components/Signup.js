@@ -50,9 +50,10 @@ const Signup = () => {
     }
   }
 
-  return <div className='container my-3'>
+  return <div className='container'>
+    <h1 className='text-center mb-3'>Signup to iCloud to make your life easy </h1>
     <form onSubmit={handleSubmit}>
-      <div className="mb-3">
+      <div className="my-3">
         <label htmlFor="exampleInputEmail1" className="form-label">Enter Your Name</label>
         <input type="text" onChange={onChange} className="form-control" name="name" id="name" autoComplete="on" aria-describedby="emailHelp" minLength={5} required />
       </div>
